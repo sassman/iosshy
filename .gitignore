@@ -4,3 +4,5 @@ Ui_*.py
 build
 dist
 IOSSHy.egg-info
+.settings/*
+.pydevproject

@@ -39,7 +39,7 @@ class Handler(SocketServer.BaseRequestHandler):
                     break
                 self.request.send(data)
         chan.close()
-        self.request.close()
+        #self.request.close()
 
 class TunnelThread(Thread):
     def __init__(self, ssh_server, local_port=0, ssh_port=22, remote_host="localhost", remote_port=None, username=None, password=None):
