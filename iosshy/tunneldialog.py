@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import sys, os
-from PyQt4.QtGui import QIcon, QDialog, QAction, QKeySequence, QListWidgetItem, QItemSelectionModel
+from PyQt4.QtGui import QIcon, QDialog, QAction, QKeySequence, QListWidgetItem, QItemSelectionModel, QApplication
 from PyQt4.QtCore import Qt, pyqtSignature, QSettings
 from tunnel import Tunnel
 from tray import Tray
@@ -57,6 +57,18 @@ class TunnelDialog(WindowBaseClass, Ui_TunnelDialog):
         self.hide()
 
     def show(self):
+        self.setGeometry(
+            (QApplication.desktop().width() -
+            (QApplication.desktop().width() -
+            (QApplication.desktop().width() / 2))) / 2,
+            (QApplication.desktop().height() -
+            (QApplication.desktop().height() -
+            (QApplication.desktop().height() / 2))) / 2,
+            ((QApplication.desktop().width() -
+            (QApplication.desktop().width() / 2))),
+            ((QApplication.desktop().height() -
+            (QApplication.desktop().height() / 2)))
+        )
         self.visible = True
         WindowBaseClass.show(self)
 
